@@ -8,7 +8,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.floatlayout import FloatLayout
 
 
-class BGS2005Convertor(App):
+class EPSGConvertor(App):
     def build(self):
 
         layout = BoxLayout(orientation='vertical')
@@ -28,4 +28,4 @@ class BGS2005Convertor(App):
 
 
 if __name__ == "__main__":
-    BGS2005Convertor().run()
+    EPSGConvertor().run()
