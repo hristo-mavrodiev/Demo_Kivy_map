@@ -1,9 +1,6 @@
 from kivy.garden.mapview import MapView, MapMarker, MapMarkerPopup
 from kivy.app import App
-from kivy.app import App
-from kivy.base import runTouchApp
 
-from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.label import Label
 
 from kivy.uix.button import Button
@@ -28,6 +25,7 @@ class BGS2005Convertor(App):
             self.mapview, 'zoom', self.mapview.zoom - 1)))
         layout.add_widget(b)
         return layout
+
 
 if __name__ == "__main__":
     BGS2005Convertor().run()
