@@ -1,3 +1,4 @@
+from kivy.uix.bubble import Bubble
 from kivy.garden.mapview import MapView, MapMarker, MapMarkerPopup
 from kivy.app import App
 
@@ -7,6 +8,9 @@ from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.floatlayout import FloatLayout
 
+from kivy.uix.popup import Popup
+from kivy.uix.bubble import Bubble
+
 
 class EPSGConvertor(App):
     def build(self):
@@ -14,8 +18,13 @@ class EPSGConvertor(App):
         layout = BoxLayout(orientation='vertical')
         self.mapview = MapView(zoom=7, lat=42.6394, lon=25.057)
 
-        marker = MapMarkerPopup(id="first", lat=42.6394, lon=25.057)
-        marker.add_widget(BoxLayout(orientation='horizontal'))
+        bubble = Bubble(orientation="horizontal", padding=5)
+        text = "[b]Sample text here[/b]"
+        label = Label(text=text, markup=True, halign="center")
+        bubble.add_widget(label)
+        marker = MapMarkerPopup(id="first", lat=42.6394,
+                                lon=25.057, popup_size=('150dp', '100dp'))
+        marker.add_widget(bubble)
         self.mapview.add_marker(marker)
 
         b = BoxLayout(orientation='horizontal',
