@@ -13,17 +13,20 @@ class EPSGConvertor(App):
 
         layout = BoxLayout(orientation='vertical')
         self.mapview = MapView(zoom=7, lat=42.6394, lon=25.057)
+
         marker = MapMarkerPopup(id="first", lat=42.6394, lon=25.057)
         marker.add_widget(BoxLayout(orientation='horizontal'))
         self.mapview.add_marker(marker)
-        layout.add_widget(self.mapview)
+
         b = BoxLayout(orientation='horizontal',
-                      height='32dp', size_hint_y=None)
+                      height='52dp', size_hint_y=None)
         b.add_widget(Button(text="Zoom in", on_press=lambda a: setattr(
             self.mapview, 'zoom', self.mapview.zoom + 1)))
         b.add_widget(Button(text="Zoom out", on_press=lambda a: setattr(
             self.mapview, 'zoom', self.mapview.zoom - 1)))
+
         layout.add_widget(b)
+        layout.add_widget(self.mapview)
         return layout
 
 
