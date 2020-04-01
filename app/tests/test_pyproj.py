@@ -8,10 +8,10 @@ simple "hack" to run directly from here
 # import os
 # import sys
 # cwd = os.getcwd()
-# sys.path.append(cwd + '/app/libs/')
+# sys.path.append(cwd + '/app/')
 """
 
-from libs.tr_proj import transform_epsg
+from tr_proj import transform_epsg
 
 
 class PyprojTest(unittest.TestCase):

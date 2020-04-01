@@ -1,5 +1,4 @@
 bin/
-.buildozer/
 cache/
 .vscode/
 # Byte-compiled / optimized / DLL files
